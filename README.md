@@ -20,7 +20,17 @@
 
 ### 推荐安装方式
 
-#### 方法1：使用Conda环境（推荐）
+#### 方法1：使用base环境（最简单）
+```bash
+# 1. 克隆项目
+git clone https://github.com/Cathylixi/Medical_Agent.git
+cd Medical_Agent
+
+# 2. 安装依赖
+pip install -r requirements.txt
+```
+
+#### 方法2：使用Conda环境(推荐)
 ```bash
 # 1. 克隆项目
 git clone https://github.com/Cathylixi/Medical_Agent.git
@@ -31,7 +41,7 @@ conda env create -f conda_environment
 conda activate medical_agent
 ```
 
-#### 方法2：使用pip安装
+#### 方法3：使用pip安装
 ```bash
 # 1. 克隆项目
 git clone https://github.com/Cathylixi/Medical_Agent.git
@@ -51,6 +61,10 @@ pip install -r requirements.txt
 ```bash
 # DashScope API配置
 DASHSCOPE_API_KEY=你的API密钥
+
+# baichuan模型配置
+BAICHUAN_BASE_URL=http://localhost:8000/v1
+BAICHUAN_API_KEY=not-needed
 
 # 站点配置（国内站）
 DASHSCOPE_BASE_URL=https://dashscope.aliyuncs.com/compatible-mode/v1
