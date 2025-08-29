@@ -466,7 +466,7 @@ def ocr_node(state: AgentState):
     else:
         # 使用专门的 OCR 客户端
         completion = state["ocr_client"].chat.completions.create(
-            model="qwen-vl-ocr",
+            model=os.getenv('QWEN_OCR_MODEL', "qwen-vl-ocr"),
             messages=messages
         )
         text = completion.choices[0].message.content
@@ -485,7 +485,7 @@ def get_medical_llm_client(state: AgentState):
     暂时全部使用Qwen，保证稳定性
     """
     # 直接使用Qwen客户端，确保稳定性
-    return state["qwen"], "qwen-max-0125"
+    return state["qwen"], os.getenv('QWEN_TEXT_MODEL', "qwen-max-0125")
 
 
 def fill_form_node(state: AgentState):
