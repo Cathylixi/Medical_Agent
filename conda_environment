@@ -1,0 +1,46 @@
+name: medical_agent
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip>=23
+  # GUI runtime (tkinter) is bundled in conda python, include tk explicitly for safety
+  - tk
+  # Native libs for pdf/image handling so pdf2image works out of the box
+  - poppler
+  - cairo
+  - zlib
+  - libpng
+  - libtiff
+  - freetype
+  - jpeg
+  - libwebp
+  - pip:
+      # Core LLM stack
+      - langgraph>=0.0.15
+      - langchain>=0.0.335
+      - langchain-openai>=0.0.2
+      - openai>=1.0.0
+      # Env
+      - python-dotenv>=1.0.0
+      # Data processing (pin to avoid known ABI issues)
+      - pandas>=1.5.0,<2.2
+      - numpy<2.0
+      - pyarrow>=10.0.0
+      # Imaging
+      - Pillow>=9.0.0
+      - opencv-python>=4.5.0
+      # PDF / Excel
+      - pdf2image>=1.16.0
+      - openpyxl>=3.0.0
+      # Typing / validation
+      - pydantic>=1.10,<3
+      - typing-extensions>=4.7.0
+      # Fuzzy matching
+      - rapidfuzz>=3.3.0
+      # CLI / utilities
+      - click>=8.0.0
+      - rich>=13.0.0
+      # Testing (optional)
+      - pytest>=7.0.0

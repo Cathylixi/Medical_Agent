@@ -1,0 +1,46 @@
+# Core LangChain and LangGraph
+langgraph>=0.0.15
+langchain>=0.0.335
+langchain-openai>=0.0.2
+
+# LLM and API
+openai>=1.0.0
+
+# Environment and Configuration
+python-dotenv>=1.0.0
+
+# Data Processing
+# pandas / numpy 版本需要与本项目代码兼容，避免 "numpy.dtype size changed" 等错误
+pandas>=1.5.0,<2.2
+numpy<2.0
+pyarrow>=10.0.0  # For parquet file support
+
+# Image Processing
+Pillow>=9.0.0
+opencv-python>=4.5.0
+
+# PDF Processing
+pdf2image>=1.16.0
+
+# Excel Support
+openpyxl>=3.0.0
+
+# GUI Support (Tkinter is usually built-in with Python)
+# tkinter  # Usually comes with Python installation
+
+# Data Models and Validation
+pydantic>=1.10,<3
+
+# Typing helpers (for Python 3.11/3.12 compatibility in some libs)
+typing-extensions>=4.7.0
+
+# Additional utilities (usually built-in)
+# json, os, pathlib, base64, glob, re, functools, concurrent.futures are built-in
+rapidfuzz>=3.3.0
+
+# CLI / Utilities
+click>=8.0.0
+rich>=13.0.0
+
+# Testing (optional but recommended for local runs)
+pytest>=7.0.0
